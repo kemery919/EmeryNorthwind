@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EmeryNorthwind.Models.Entities {
   public class Employee {
     [Key]
-    public int EmployeeID { get; set; } = default!;
+    public int EmployeeId { get; set; } = default!;
     public string? LastName { get; set; }
     public string? FirstName { get; set; }
     public string? Title { get; set; }

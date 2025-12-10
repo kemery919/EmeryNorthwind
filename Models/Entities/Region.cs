@@ -7,7 +7,7 @@ namespace EmeryNorthwind.Models.Entities {
   [Table("Regions")]
   public class Region {
     [Key]
-    public int RegionID { get; set; } = default!;
+    public int RegionId { get; set; } = default!;
     public string? RegionDescription { get; set; }
   }
 }

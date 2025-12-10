@@ -7,10 +7,10 @@ namespace EmeryNorthwind.Models.Entities {
   [Table("Territories")]
   public class Territory {
     [Key]
-    public string TerritoryID { get; set; } = default!;
+    public string TerritoryId { get; set; } = default!;
     public string TerritoryDescription { get; set; } = default!;
-    [ForeignKey("RegionID")]
-    public int? RegionID { get; set; }
+    [ForeignKey("RegionId")]
+    public int? RegionId { get; set; }
     public virtual Region? Region { get; set; }
   }
 }
