@@ -118,10 +118,6 @@ namespace EmeryNorthwind.Controllers {
                                         .OrderByDescending(p => p.UnitPrice)
                                         .Take(count)
                                         .ToList();
-
-      foreach (var product in productDtos) {
-        product.UnitPrice = Math.Round(product.UnitPrice, 2);
-      }
       
       return Ok(productDtos);
     }
