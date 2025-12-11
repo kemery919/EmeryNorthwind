@@ -20,6 +20,13 @@ namespace EmeryNorthwind.Controllers {
       _customerMappingService = customerMappingService;
     }
 
+    private async Task<string> FetchContactName(string customerId){
+        return await _context.Customers
+            .Where(c => c.CustomerId == customerId)
+            .Select(c => c.ContactName)
+            .FirstOrDefaultAsync();
+      }
+
     // api/customers/by-country
     [HttpGet("by-country")]
     public async Task<ActionResult<List<CustomerDto>>> GetCustomersByCountry() {
@@ -69,14 +76,9 @@ namespace EmeryNorthwind.Controllers {
         .ToListAsync();
 
       var orderSummary = new OrderSummaryDto();
-
-      var fetchContactName = await _context.Customers
-        .Where(c => c.CustomerId == customerId)
-        .Select(c => c.ContactName)
-        .FirstOrDefaultAsync();
       
       orderSummary.CustomerId = customerId;
-      orderSummary.ContactName = orders.Any() ? orders[0].Order.Customer.ContactName : fetchContactName;
+      orderSummary.ContactName = orders.Any() ? orders[0].Order.Customer.ContactName : await FetchContactName(customerId);
       orderSummary.TotalOrders = orders.Count > 0 ? orders.Count : 0;
       orderSummary.FirstOrderDate = orders.Count > 0 ? orders[0].Order.OrderDate : (DateTime?)null;
       orderSummary.MostRecentOrderDate = orders.Count > 0 ? orders[orders.Count - 1].Order.OrderDate : (DateTime?)null;
