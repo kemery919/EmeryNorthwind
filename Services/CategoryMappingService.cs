@@ -12,4 +12,11 @@ public class CategoryMappingService {
       _mapper = mapper;
   }
 
+  public CategoryDto MapToCategoryDto(Category category){
+      return _mapper.Map<CategoryDto>(category);
+  }
+
+  public Category MapToCategory(CategoryDto categoryDto){
+      return _mapper.Map<Category>(categoryDto);
+  }
 }

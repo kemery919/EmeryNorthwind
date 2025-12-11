@@ -12,7 +12,7 @@ namespace EmeryNorthwind.Models.Entities {
     public int ProductId { get; set; } = default!;
     public virtual Product Product { get; set; } = default!;
     public decimal? UnitPrice { get; set; }
-    public short? Quantity { get; set; }
-    public float? Discount { get; set; }
+    public int? Quantity { get; set; }
+    public decimal? Discount { get; set; }
   }
 }

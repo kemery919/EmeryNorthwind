@@ -12,6 +12,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// This ensures all routes are lowercase
+// Thank you Google
+builder.Services.Configure<RouteOptions>(options => {options.LowercaseUrls = true;});
+
 // Provides endpoint metadata
 builder.Services.AddEndpointsApiExplorer();
 
