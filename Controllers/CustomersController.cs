@@ -25,7 +25,7 @@ namespace EmeryNorthwind.Controllers {
             .Where(c => c.CustomerId == customerId)
             .Select(c => c.ContactName)
             .FirstOrDefaultAsync();
-      }
+    }
 
     // api/customers/by-country
     [HttpGet("by-country")]
@@ -55,7 +55,8 @@ namespace EmeryNorthwind.Controllers {
 
       var customersWithNoOrders = allCustomers
         .Except(customersWithOrders)
-        .Select(_customerMappingService.MapToCustomerDto).ToList();
+        .Select(_customerMappingService.MapToCustomerDto)
+        .ToList();
 
       return Ok(customersWithNoOrders);
     }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmeryNorthwind")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b2f9baa1b03643b99b70399fe4b1b3b5e6cd565")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a97f1f49de882683f137b97855be51725688565c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmeryNorthwind")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmeryNorthwind")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
